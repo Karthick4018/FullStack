@@ -15,7 +15,7 @@ export const Loginsignup = () => {
   const login= async ()=>{
     console.log('login function',formdata)
     let responsedata;
-    await fetch('http://localhost:4000/login',{
+    await fetch('https://karthiks-sos.onrender.com/login',{
       method:'POST',
       headers:{
         Accept:'application/form-data',
@@ -40,7 +40,7 @@ export const Loginsignup = () => {
   const signup= async()=>{
     console.log('signup function',formdata)
     let responsedata;
-    await fetch('http://localhost:4000/signup',{
+    await fetch('https://karthiks-sos.onrender.com/signup',{
       method:'POST',
       headers:{
         Accept:'application/form-data',
