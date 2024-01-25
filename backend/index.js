@@ -27,8 +27,8 @@ app.use('/images',express.static('uploads/images'))
 app.post('/uploads',upload.single('product'),(req,res)=>{
     res.json({
         success:1,
-        image_url:`${req.protocol}://${req.get('host')}:${port}/images/${req.file.filename}`,
-        message:'successfully done'
+        image_url:`/images/${req.file.filename}`,
+        message:'successfully done',
     })
     console.log('image uploaded');
 })
