@@ -5,7 +5,7 @@ import { Items } from '../Items/Items'
 export const Popular = () => {
   const [data_product,setdataproduct]=useState([]);
   useEffect(()=>{
-    fetch('https://karthiks-sos.onrender.com/popular')
+    fetch('http://localhost:4000/popular')
     .then((res)=>{
       let response = res.json();
       return response;

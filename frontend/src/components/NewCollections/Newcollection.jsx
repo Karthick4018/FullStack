@@ -5,7 +5,7 @@ import { Items } from '../Items/Items'
 export const Newcollection = () => {
   const [newcollection,setnewcollection]=useState([])
   useEffect(()=>{
-    fetch('https://karthiks-sos.onrender.com/newcollections')
+    fetch('http://localhost:4000/newcollections')
     .then((res)=>{
       let response = res.json()
       return response;

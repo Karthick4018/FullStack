@@ -22,7 +22,7 @@ export const Navbar = () => {
     window.addEventListener("scroll",changeColor);
     useEffect(()=>{
       if(localStorage.getItem('auth-token')){
-        fetch('https://karthiks-sos.onrender.com/getdetails',{
+        fetch('http://localhost:4000/getdetails',{
           method:'POST',
           headers:{
             Accept:'application/json',

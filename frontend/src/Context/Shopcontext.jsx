@@ -12,7 +12,7 @@ const ShopContextProvider=(props)=>{
     const addToCart=(itemid)=>{
         setCartItems((prev)=>({...prev,[itemid]:prev[itemid]+1}));
         if(localStorage.getItem('auth-token')){
-            fetch('https://karthiks-sos.onrender.com/addtocart',{
+            fetch('http://localhost:4000/addtocart',{
                 method:'POST',
                 headers:{
                     Accept:'application/json',
@@ -32,7 +32,7 @@ const ShopContextProvider=(props)=>{
     const removeCartItems=(itemid)=>{
         setCartItems((prev)=>({...prev,[itemid]:prev[itemid]-1}))
         if(localStorage.getItem('auth-token')){
-            fetch('https://karthiks-sos.onrender.com/removecart',{
+            fetch('http://localhost:4000/removecart',{
                 method:'POST',
                 headers:{
                     Accept:'application/json',
@@ -68,7 +68,7 @@ const ShopContextProvider=(props)=>{
     }
     const [all_product,setallproducts]=useState([])
     useEffect(()=>{
-        fetch('https://karthiks-sos.onrender.com/allproducts')
+        fetch('http://localhost:4000/allproducts')
         .then((res)=>{
             let response=res.json()
             return response;
@@ -77,7 +77,7 @@ const ShopContextProvider=(props)=>{
             setallproducts(data)
         })
         if(localStorage.getItem('auth-token')){
-            fetch('https://karthiks-sos.onrender.com/getcart',{
+            fetch('http://localhost:4000/getcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
