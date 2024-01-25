@@ -1,5 +1,7 @@
-const port = 4000;
 const express = require('express');
+require('dotenv').config();
+const port = process.env.PORT||4000;
+const database_url=process.env.MONGODB_URI;
 const app=express();
 const mongoose = require('mongoose');
 const jwt=require('jsonwebtoken');
@@ -8,7 +10,7 @@ const path = require('path');
 const cors=require('cors');
 app.use(express.json());
 app.use(cors());
-mongoose.connect("mongodb+srv://kk7368436:123@cluster0.hmvnh3h.mongodb.net/karthik");
+mongoose.connect(database_url);
 app.get('/',(req,res)=>{
     res.send('hello karthik')
 })
