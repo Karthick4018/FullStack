@@ -17,15 +17,21 @@ const Listproduct = () => {
   useEffect(()=>{
     fetchProduct()
   },[])
-  const removeproduct= async (id)=>{
+  const removeproduct= async (id,name)=>{
     await fetch('http://localhost:4000/removeproduct',{
       method:'POST',
       headers:{
         Accept:'application/json',
-        'Content-type':'appication/json',
+        'Content-type':'application/json',
       },
-      body:JSON.stringify({id:id})
+      body:JSON.stringify({id:id,name:name}),
+    }).then((res)=>{
+      let response = res.json();
+      return response;
+    }).then((data)=>{
+      {data.message==='removed'?alert(`${data.name} successfully removed`):alert('error')}
     })
+
     await fetchProduct();
   }
   return (
@@ -47,7 +53,8 @@ const Listproduct = () => {
                      <div><p>${product.old_price}</p></div>
                       <div><p>{product.new_price}</p></div>
                       <div><p>{product.category}</p></div>
-                      <div><img id='in' onClick={()=>{removeproduct(product.id)}} src={removeicon} alt="" /></div>
+                      <div><img id='in' onClick={()=>{removeproduct(product.id,product.name);}} src={removeicon} alt="" /></div>
+                      <div><p></p></div>
                </div></div>
       })}
 

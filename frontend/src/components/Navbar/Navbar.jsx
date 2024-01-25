@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './navbar.css'
 import logo from '../Assests/logo.png'
 import cart from '../Assests/cart_icon.png'
@@ -10,6 +10,7 @@ export const Navbar = () => {
   const[menu,showmenu]=useState("shop");
   const[ham,showham]=useState(false);
   const [color,setColor]=useState(false)
+  const [name,setname]= useState("Guest")
     const changeColor =()=>{
         if(window.scrollY>=1){
             setColor(true);
@@ -19,6 +20,24 @@ export const Navbar = () => {
         }
     }
     window.addEventListener("scroll",changeColor);
+    useEffect(()=>{
+      if(localStorage.getItem('auth-token')){
+        fetch('http://localhost:4000/getdetails',{
+          method:'POST',
+          headers:{
+            Accept:'application/json',
+            'auth-token':`${localStorage.getItem('auth-token')}`,
+            'Content-type':'application/json',
+          },
+          body:'',
+        }).then((res)=>{
+          let response = res.json();
+          return response;
+        }).then((data)=>{
+          setname(data)
+        })
+      }
+    },[])
   return (
     <div>
         <div className={color? 'navbar color2':'navbar'}>
@@ -40,6 +59,7 @@ export const Navbar = () => {
                 <Link to='/cart'><img src={cart} alt="cart" /></Link>
                 <div className="redicon">{cartIcon()}</div>
               </div>
+              {localStorage.getItem('auth-token')?<p>{name}</p>:<p>Guest</p>}
               </ul>
             </div>
             <div className="hammenu" onClick={()=>showham(!ham)}>
