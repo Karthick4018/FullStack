@@ -1,0 +1,53 @@
+.category-image{
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.category-image img{
+    max-width: 80vw;
+
+}
+.inner-category{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+.index{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.items-category{
+    display: grid;
+    gap: 1rem;
+    max-width: 90%;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+.btnarrow{
+    display: flex;
+    gap: 10px;
+    background-color: lightgray;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 100px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+div.exploreicon{
+    width: 120px;
+    height: 50px;
+    background-color: lightgray;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.index p span{
+    font-weight: 600;
+}

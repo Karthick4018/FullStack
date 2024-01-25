@@ -1,0 +1,126 @@
+.hero{
+    background: linear-gradient(180deg ,#ffb6b9, #9fb1fc 70%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+.banner img{
+    width: 400px;
+}
+.row{
+    display: flex;
+    align-items: center;
+}
+.name{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.name2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.row img{
+    width: 70px;
+    height: 70px;
+}
+.row h1{
+    font-size: 70px;
+    font-weight: 500;
+    color: aliceblue;
+}
+.name2 h2{
+    font-size: 50px;
+    font-weight: 400;
+}
+.latest img{
+    width: 15px;
+    height: 10px;
+}
+.latest{
+    background-color: red;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+@media screen and (max-width:850px) {
+    .row h1{
+        font-size: 50px;
+    }
+    .name2 h2{
+        font-size: 30px;
+    }
+    .banner img{
+        width: 300px;
+    }
+    .row img{
+        width: 50px;
+        height: 50px;
+    }
+}
+@media screen and (max-width:650px) {
+    .row h1{
+        font-size: 40px;
+    }
+    .name2 h2{
+        font-size: 20px;
+    }
+    .banner img{
+        width: 250px;
+    }
+    .row img{
+        width: 40px;
+        height: 40px;
+    }
+    .name{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:500px) {
+    .row h1{
+        font-size: 30px;
+    }
+    .name2 h2{
+        font-size: 10px;
+    }
+    .banner img{
+        width: 250px;
+    }
+    .row img{
+        width: 40px;
+        height: 40px;
+    }
+}
+@media screen and (max-width:450px) {
+    .row h1{
+        font-size: 20px;
+    }
+
+    .banner img{
+        width: 210px;
+    }
+    .name2 p{
+        font-size: 10px;
+    }
+    
+}
+@media screen and (max-width:300px) {
+    .row h1{
+        font-size: 10px;
+    }
+    .banner img{
+        width: 150px;
+    }
+    
+}

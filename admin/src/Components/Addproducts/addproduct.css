@@ -1,0 +1,36 @@
+.details{
+    height: 100vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0px 0px 10px -2px #000;
+    border-radius: 10px;
+}
+.details button{
+    width: 100px;
+    height: 30px;
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    border: 0px;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.title input{
+    height: 30px;
+    width: 300px;
+}
+.title select,option{
+    height: 40px;
+    width: 300px;
+}
+.details h2{
+    font-weight: 400;
+}

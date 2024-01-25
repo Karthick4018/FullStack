@@ -1,0 +1,125 @@
+.carts2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    position: relative;
+    top: 70px;
+    gap: 50px;
+    z-index: 1;
+}
+
+
+.cartings{
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.outer-cart{
+    width: 100%;
+    height:100%;
+}
+.cart-details{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+#ii{
+    width: 100px;
+    height: 100px;
+}
+.cart{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    align-items: center;
+}
+.cart1{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.carthead2{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+.cartsidehead{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.griding{
+    display: flex;
+    justify-content: space-between;
+}
+.checkout button{
+    height: 50px;
+    width: 250px;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 5px ;
+    border: 2px solid red;
+}
+.promo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.pr p{
+    color: grey;
+}
+.pr2 input,button{
+    height:50px ;
+    border-radius: 5px ;
+}
+.pr2 button{
+    width: 100px;
+    background-color: black;
+    color: white;
+}
+.itemgrid button{
+    width: 40px;
+    height: 20px;
+    background-color: red;
+    color: white;
+}
+
+
+
+
+@media screen and (max-width:600px) {
+    .outer-cart{
+        display: flex;
+        gap: 10px;
+    }
+    .cart-details{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .cart{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    #uni{
+        font-size: 10px;
+    }
+    #ii{
+        width: 50px;
+        height: 50px;
+    }
+    .cart1{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+}

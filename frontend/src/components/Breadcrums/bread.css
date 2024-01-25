@@ -1,0 +1,28 @@
+.bread-outer{
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.values{
+    display: flex;
+    align-items: center;
+}
+.values div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.values img{
+    height: 20px;
+}
+@media screen and (max-width:850px) {
+    .values div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bread-outer{
+        min-height: 70vh;
+    }
+}

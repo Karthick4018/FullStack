@@ -1,0 +1,6 @@
+POST http://localhost:4000/uploads
+
+Content-Type: multipart/form-data; boundary=MfnBoundry
+
+Content-Disposition:form-data; name='products' 
+

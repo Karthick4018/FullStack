@@ -1,0 +1,47 @@
+.outer-login{
+    height: 100vh;
+    background: linear-gradient(180deg,#ffb6b9, #9fb1fc 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 10px solid white;
+    border-radius: 5px;
+}
+.inputfields{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.inputfields input{
+    height: 35px;
+    border-radius: 5px;
+    border-color: white;
+}
+.signupbtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    background-color: skyblue;
+    border-radius: 5px;
+    border-color:skyblue;
+    cursor: pointer;
+}
+.agree{
+    display: flex;
+    gap: 5px;
+}
+.already p span{
+    color: #734b6d;
+    cursor: pointer;
+}
+.signupbanner h1{
+    font-weight: 400;
+}
