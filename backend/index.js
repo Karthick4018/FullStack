@@ -94,8 +94,7 @@ app.post('/addproduct',async (req,res)=>{
     });
 })
 app.post('/removeproduct', async (req,res)=>{
-    let delprod=await products.findOne({id:req.body.id})
-    await products.deleteOne(delprod);
+    await products.findOneAndDelete({id:req.body.id});
     console.log('successfully removed');
     res.json({
         message:'removed',
@@ -160,7 +159,7 @@ app.post('/signup', async(req,res)=>{
     await user.save();
     const data={
         user:{
-            id:user.id
+            id:user._id
         }
     }
     const token = jwt.sign(data,'secret_tok')
@@ -178,7 +177,7 @@ app.post('/login',async (req,res)=>{
         if(comparepassword){
             const data={
                 user:{
-                    id:user.id
+                    id:user._id
                 }
             }
             const token=jwt.sign(data,'secret_tok')
@@ -186,6 +185,7 @@ app.post('/login',async (req,res)=>{
                 success:true,
                 token,
                 message:`Welcome ${user.name} successfully logged in`,
+                name:`${user.name}`
             })
         }
         else{
@@ -264,6 +264,10 @@ app.post('/getcart',fetchuser,async(req,res)=>{
     console.log('cart data of user');
     const user =await Users.findOne({_id:req.user.id});
     res.json(user.cartdata);
+})
+app.post('/getdetails',fetchuser,async(req,res)=>{
+    const user=await Users.findOne({_id:req.user.id});
+    res.json(user.name);
 })
 
 app.listen(port,()=>{
