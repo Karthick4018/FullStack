@@ -3,11 +3,12 @@ import './CSS/shopcategory.css'
 import { Items } from '../components/Items/Items'
 import { ShopContext } from '../Context/Shopcontext';
 import dropdownarrow from '../components/Assests/dropdown_icon.png'
+import { motion } from 'framer-motion';
 
 export const Shopcategory = (props) => {
   const {all_product}= useContext(ShopContext);
   return (
-    <div className='outer-category'>
+    <motion.div className='outer-category' initial={{width:0}} animate={{width:'100%'}} exit={{x:window.innerWidth,transition:{duration:1}}}>
       <div className="category-image">
       <img src={props.banner} alt="" />
       </div>
@@ -42,6 +43,6 @@ export const Shopcategory = (props) => {
         <div>Explore More</div>
       </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './CSS/login.css'
+import { motion } from 'framer-motion'
 
 export const Loginsignup = () => {
   const[state,setState]=useState("Login")
@@ -63,7 +64,7 @@ export const Loginsignup = () => {
     }
   }
   return (
-    <div className='outer-login'>
+    <motion.div className='outer-login' initial={{width:0}} animate={{width:'100%'}} exit={{x:window.innerWidth,transition:{duration:1}}}>
       <div className="login-container">
         <div className="signupbanner">
           <h1>{state}</h1>
@@ -88,6 +89,6 @@ export const Loginsignup = () => {
         </div>
       </div>
 
-    </div>
+    </motion.div>
   )
 }
